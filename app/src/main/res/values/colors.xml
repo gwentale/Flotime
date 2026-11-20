@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_blue">#1690F3</color>
+    <color name="primary_dark">#0D74C7</color>
+    <color name="bg_main">#F3F7FA</color>
+    <color name="text_primary">#1F2430</color>
+    <color name="text_secondary">#8C93A4</color>
+    <color name="accent_deci_red">#FF3B1D</color>
+    <color name="floating_text_sub">#D9E2EC</color>
+    <color name="banner_warn_bg">#FFF0EE</color>
+    <color name="banner_warn_text">#E0533C</color>
+    <color name="white">#FFFFFF</color>
+</resources>

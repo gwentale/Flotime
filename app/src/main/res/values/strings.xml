@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Flotime</string>
+    <string name="device_time">Device Time</string>
+    <string name="open_floating">Start Flotime</string>
+    <string name="close_floating">Close Flotime</string>
+    <string name="metrics_on">Stats: ON</string>
+    <string name="metrics_off">Stats: OFF</string>
+
+    <string name="notif_channel_name">Flotime Overlay</string>
+    <string name="notif_channel_desc">Keeps Flotime active on screen</string>
+    <string name="notif_active_text">Flotime is active on screen</string>
+    <string name="notif_action_close">Close</string>
+    <string name="overlay_perm_required_toast">Display over other apps permission is required</string>
+
+    <string name="menu_title_settings">Settings</string>
+    <string name="menu_theme_settings">Theme Mode</string>
+    <string name="menu_permission_settings">App Permission Settings</string>
+    <string name="menu_about_app">About App</string>
+
+    <string name="theme_light">Light Mode</string>
+    <string name="theme_dark">Dark Mode</string>
+    <string name="theme_adaptive">Adaptive (System)</string>
+
+    <string name="perm_welcome">Welcome to</string>
+    <string name="perm_subtitle">To ensure the app runs properly, please grant the following permissions</string>
+    <string name="perm_badge_required">Required</string>
+    <string name="perm_status_enabled">Enabled</string>
+    <string name="perm_btn_enable">Enable</string>
+    <string name="perm_overlay_title">Display Over Other Apps</string>
+    <string name="perm_overlay_desc">Used to display the floating clock window on screen</string>
+    <string name="perm_battery_title">Allow Background Power Usage</string>
+    <string name="perm_battery_desc">Prevents the floating window from being closed in background</string>
+
+    <string name="about_title">About</string>
+    <string name="about_card_header">About App</string>
+    <string name="about_app_desc">Ultra-Light Floating Clock: Milliseconds, Instant Precision, Live Network Stats, Tiny Footprint and Battery-Friendly</string>
+    <string name="about_dev_label">Developer</string>
+</resources>
