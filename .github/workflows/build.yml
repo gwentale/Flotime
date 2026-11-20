@@ -16,7 +16,7 @@ on:
       publish_release:
         description: 'Publish otomatis ke tab Releases?'
         required: true
-        default: false
+        default: true
         type: boolean
 
 permissions:
@@ -46,10 +46,17 @@ jobs:
           KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
         run: |
           echo "$KEYSTORE_BASE64" | tr -d '\n\r ' | base64 --decode > app/release.jks
-
+          
+      - name: Set APK Version in Gradle
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          CLEAN_VER="${VERSION#v}"
+          sed -i -E "s/versionName = \"[^\"]+\"/versionName = \"${CLEAN_VER}\"/" app/build.gradle.kts
+          echo "Updated versionName to ${CLEAN_VER}"
+          
       - name: Build Signed Release APK
         env:
-          APP_VERSION_NAME: ${{ inputs.version }}
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
@@ -93,4 +100,3 @@ jobs:
               --notes "$NOTES" \
               --latest
           fi
-          
