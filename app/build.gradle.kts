@@ -11,8 +11,25 @@ android {
         applicationId = "com.flotime"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0.0"
+
+        val rawVersion = System.getenv("APP_VERSION_NAME")
+            ?.trim()
+            ?.removePrefix("v")
+            ?.removePrefix("V")
+            ?.takeIf { it.isNotEmpty() } ?: "1.0.0"
+
+        val verParts = rawVersion.split("-", limit = 2)[0]
+            .split(".")
+            .mapNotNull { it.toIntOrNull() }
+        val autoVersionCode = when {
+            verParts.size >= 3 -> verParts[0] * 10000 + verParts[1] * 100 + verParts[2]
+            verParts.size == 2 -> verParts[0] * 10000 + verParts[1] * 100
+            verParts.size == 1 -> verParts[0] * 10000
+            else -> 1
+        }.coerceAtLeast(1)
+
+        versionCode = System.getenv("APP_VERSION_CODE")?.toIntOrNull() ?: autoVersionCode
+        versionName = rawVersion
 
         resourceConfigurations += listOf("en")
     }
