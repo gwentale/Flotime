@@ -1204,6 +1204,8 @@ class FloatingClockService : Service() {
 
     private fun updateMetricsVisibility() {
         val visibility = if (showMetrics) View.VISIBLE else View.INVISIBLE
+        tvDateBadge?.visibility = visibility
+        tvTimeSource?.visibility = visibility
         tvRefreshRate?.visibility = visibility
         tvNetSpeed?.visibility = visibility
     }
