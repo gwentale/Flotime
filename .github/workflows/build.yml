@@ -68,10 +68,8 @@ jobs:
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
         run: |
-          DATE_FULL=$(TZ="Asia/Jakarta" date +"%Y%m%d")
           DATE_SHORT=$(TZ="Asia/Jakarta" date +"%y%m%d")
-          CLEAN_VER="${BASE_VERSION#v}"
-          export APP_VERSION_NAME="${CLEAN_VER}-${DATE_FULL}"
+          export APP_VERSION_NAME="${BASE_VERSION#v}"
           export APP_VERSION_CODE="${DATE_SHORT}${BUILD_NUM}"
           echo "Building versionName=${APP_VERSION_NAME} | versionCode=${APP_VERSION_CODE}"
           gradle clean assembleRelease --stacktrace
